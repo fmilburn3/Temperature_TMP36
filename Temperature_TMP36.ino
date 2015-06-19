@@ -1,6 +1,8 @@
 /*
 This sketch uses the serial monitor and an MSP432F5529 with the
-TMP36 to report temperature in degrees Celsius.
+TMP36 to report temperature in degrees Celsius.  It should
+work with most LaunchPads but you may need to change the const
+analogRes since some LaunchPads have only 0 to 1023 resolution.
 
 The TMP36 is a low voltage, temperature sensor that provides
 an analog signal that is linearly proportional to the
@@ -25,13 +27,13 @@ TMP 36    MSP430F5529
 ------    ---------------------------------------------------
 Vs        3.3V
 Vs        0.1uF capacitor to GND
-Vout      Pin 23  This must be an analog read pin
+Vout      Pin 6  This must be an analog read pin
 GND       GND
 
 Frank Milburn 3 April 2015
 */
 
-const int TMP36Pin = 23;    // pin sensor is connected to
+const int TMP36Pin = 6;    // pin sensor is connected to
 const int analogRes = 4095; // A/D resolution
 
 void setup()
